@@ -10,7 +10,6 @@ body {
     color: white;
     padding: 1em;
     text-align: center;
-    position: fixed;
 }
 
 .main-logo{
@@ -19,7 +18,13 @@ body {
 }
 
 .navbar {
-    margin-bottom: 20px;
+    width: 100%;
+}
+
+.fixed-nav {
+    z-index: 1;
+    position: sticky;
+    top: 0;
 }
 
 .main {

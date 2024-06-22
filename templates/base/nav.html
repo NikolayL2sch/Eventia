@@ -20,3 +20,15 @@
         </ul>
     </div>
 </nav>
+
+<script>
+    var header = document.getElementsByTagName("header")[0];
+    var navbar = document.getElementsByClassName("navbar")[0];
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > header.offsetHeight) {
+            navbar.classList.add('fixed-nav');
+        } else {
+            navbar.classList.remove('fixed-nav');
+        }
+    });
+</script>

@@ -25,7 +25,7 @@
         </div>
     </div>
     <h3 class="mt-5">Предстоящие события</h3>
-    <div class="events-overview">
+    <p class="events-overview">
         <!-- Здесь будет код для отображения предстоящих событий -->
         {% for event in events %}
             <div class="event card mb-3">
@@ -36,7 +36,8 @@
                     <a href="{% url 'event_detail' event.id %}" class="btn btn-primary">Подробнее</a>
                 </div>
             </div>
+        {% empty %}
+            <p><h4>К сожалению, пока что запланированных событий нет. Возвращайтесь позже.</h4></p>
         {% endfor %}
-    </div>
 </div>
 {% endblock %}

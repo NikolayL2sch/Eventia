@@ -11,7 +11,7 @@
 <body>
     <header class="bg-primary text-white text-center py-3">
         <!-- Общий заголовок для всех страниц -->
-        <img src="{% static 'images/logo_main.png' %}" class="main-logo" alt="Логотип проекта шапки">
+        <img src="{% static 'images/logo_main.png' %}" class="main-logo" alt="Логотип проекта шапки" href="{% url 'show_index' %}">
     </header>
     {% include 'base/nav.html' %}
     <main class="container my-5">
