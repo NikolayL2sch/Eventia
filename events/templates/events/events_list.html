@@ -1,0 +1,12 @@
+<div class="events-overview">
+    <h3>Предстоящие события</h3>
+    <!-- Здесь будет код для отображения предстоящих событий -->
+    {% for event in events %}
+        <div class="event">
+            <h4>{{ event.title }}</h4>
+            <p>{{ event.description }}</p>
+            <p><strong>Дата:</strong> {{ event.start_time }}</p>
+            <a href="{% url 'event_detail' event.id %}">Подробнее</a>
+        </div>
+    {% endfor %}
+</div>

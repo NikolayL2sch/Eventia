@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="home text-center">
+    <h2>Добро пожаловать в Eventia</h2>
+    <p class="lead">Это ваша социальная сеть для организации и участия в событиях.</p>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <img src="{% static 'images/organize_events.png' %}" class="img-fluid" alt="Организация событий">
+            <h3>Организуйте события</h3>
+            <p>Создавайте и управляйте событиями с легкостью, приглашайте участников и отслеживайте их активность.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/join_events.png' %}" class="img-fluid" alt="Участие в событиях">
+            <h3>Участвуйте в событиях</h3>
+            <p>Найдите интересные мероприятия и присоединяйтесь к ним, взаимодействуйте с другими участниками.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/real_time_chat.jpg' %}" class="img-fluid" alt="Живое общение">
+            <h3>Живое общение</h3>
+            <p>Используйте чат и видеозвонки для общения с другими участниками событий в реальном времени.</p>
+        </div>
+    </div>
+    <h3 class="mt-5">Предстоящие события</h3>
+    <div class="events-overview">
+        <!-- Здесь будет код для отображения предстоящих событий -->
+        {% for event in events %}
+            <div class="event card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">{{ event.title }}</h4>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-text"><strong>Дата:</strong> {{ event.start_time }}</p>
+                    <a href="{% url 'event_detail' event.id %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
